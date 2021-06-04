@@ -27,6 +27,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
+        'bio',
+        'github_id',
+        'github_username',
+        'github_access_token'
     ];
 
     /**
@@ -58,4 +63,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function pipelines()
+    {
+        return $this->hasMany(Pipeline::class);
+    }
+
+    public function privatePipelines()
+    {
+        return $this->pipelines()->where('private', true);
+    }
 }
