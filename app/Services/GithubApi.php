@@ -93,10 +93,35 @@ class GithubApi
 
             return $webhook;
         } catch (ClientException $e) {
-            session()->flash('flash.banner', $e->getResponse()->getBody()->getContents());
-            session()->flash('flash.bannerStyle', 'danger');
-
-            abort(redirect()->route('pipeline.index'));
+            $this->returnWithError($e->getResponse()->getBody()->getContents());
         }
+    }
+
+    public function deleteWebhook(User $user, $repository, Pipeline $pipeline)
+    {
+        try {
+            $request = $this->client->request('delete', '/repos/' . $repository . '/hooks/' . $pipeline->github_webhook_id, [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $user->github_access_token,
+                    'Content-Type' => 'application/json'
+                ],
+            ]);
+
+            return json_decode($request->getBody(), true);
+        } catch (ClientException $e) {
+            if ($e->getCode() === 404) { // the hook was probably removed manually, so let's skip
+                // code...
+            } else {
+                $this->returnWithError($e->getResponse()->getBody()->getContents());
+            }
+        }
+    }
+
+    private function returnWithError(string $message)
+    {
+        session()->flash('flash.banner', $message);
+        session()->flash('flash.bannerStyle', 'danger');
+
+        abort(redirect()->route('pipeline.index'));
     }
 }

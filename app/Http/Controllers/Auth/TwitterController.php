@@ -23,6 +23,6 @@ class TwitterController extends Controller
 
         $pipeline->linkTwitterAccount($user);
 
-        return redirect()->route('pipeline.show', $pipeline);
+        return redirect()->route('pipeline.index');
     }
 }

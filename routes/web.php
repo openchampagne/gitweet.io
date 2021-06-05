@@ -12,7 +12,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('pipeline/add/{author}/{repository}', 'PipelineController@addRepository')->name('pipeline.create');
     Route::get('pipeline', 'PipelineController@index')->name('pipeline.index');
-    Route::get('pipeline/{pipeline}', 'PipelineController@show')->name('pipeline.show');
     Route::delete('pipeline/{pipeline}', 'PipelineController@destroy')->name('pipeline.destroy');
 
     // Link Twitter to Pipeline

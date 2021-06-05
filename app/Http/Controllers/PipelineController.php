@@ -14,14 +14,6 @@ class PipelineController extends Controller
         return view('pipeline.index', compact('pipelines'));
     }
 
-    public function show(Pipeline $pipeline)
-    {
-        if (!$pipeline->twitter_access_code) {
-            return view('pipeline.twitter.link', compact('pipeline'));
-        }
-        return view('pipeline.show', compact('pipeline'));
-    }
-
     public function addRepository($author, $repository, GithubApi $github)
     {
         $user = auth()->user();
@@ -54,8 +46,10 @@ class PipelineController extends Controller
         return view('pipeline.twitter.link', compact('pipeline'));
     }
 
-    public function destroy(Pipeline $pipeline)
+    public function destroy(Pipeline $pipeline, GithubApi $github)
     {
+        $github->deleteWebhook(auth()->user(), $pipeline->repository, $pipeline);
+
         $pipeline->delete();
 
         session()->flash('flash.banner', 'The repositroy was unlinked, and the pipeline was deleted');
