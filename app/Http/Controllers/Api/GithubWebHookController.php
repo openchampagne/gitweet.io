@@ -8,6 +8,11 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 class GithubWebHookController extends Controller
 {
+    public function show(Pipeline $pipeline)
+    {
+        return $pipeline->count;
+    }
+
     public function store(Pipeline $pipeline)
     {
         $message = $this->getMessage(request()->input('head_commit.message'));
@@ -37,6 +42,6 @@ class GithubWebHookController extends Controller
             $pipeline->twitter_access_code_secret
         );
 
-        $connection->post('statuses/update', ['status' => $message]);
+        ld($connection->post('statuses/update', ['status' => $message]));
     }
 }
