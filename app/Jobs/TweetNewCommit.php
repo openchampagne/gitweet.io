@@ -61,10 +61,10 @@ class TweetNewCommit implements ShouldQueue
 
     private function isPusherABot(): bool
     {
-        return Str::containsAll([
+        return Str::containsAll($this->pusher, [
             '[bot]',
             // ...
-        ], $this->pusher);
+        ]);
     }
 
     private function tweet(string $message, Pipeline $pipeline)
