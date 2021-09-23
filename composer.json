@@ -16,7 +16,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.49",
+        "laravel/framework": "^8.61",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.6",
         "laravel/socialite": "^5.2",
@@ -26,11 +26,11 @@
     },
     "require-dev": {
         "facade/ignition": "^2.5",
-        "fakerphp/faker": "^1.15.0",
+        "fakerphp/faker": "^1.16.0",
         "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.2",
-        "nunomaduro/collision": "^5.5",
-        "phpunit/phpunit": "^9.5.6"
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^5.10",
+        "phpunit/phpunit": "^9.5.9"
     },
     "autoload": {
         "psr-4": {
