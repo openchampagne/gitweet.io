@@ -27,7 +27,7 @@ class TweetNewCommit implements ShouldQueue
     public function __construct(Pipeline $pipeline, array $githubPayload)
     {
         $this->pipeline = $pipeline;
-        $this->message = $this->getMessage($githubPayload['head_commit']['message']);
+        $this->message = $this->getMessage($githubPayload['head_commit']['message'] ?? '');
         $this->pusher = $githubPayload['pusher']['name'];
     }
 
