@@ -63,6 +63,7 @@ class TweetNewCommit implements ShouldQueue
     {
         return Str::containsAll($this->pusher, [
             '[bot]',
+            'dependabot'
             // ...
         ]);
     }
