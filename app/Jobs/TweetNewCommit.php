@@ -61,10 +61,9 @@ class TweetNewCommit implements ShouldQueue
 
     private function isPusherABot(): bool
     {
-        return Str::containsAll($this->pusher, [
+        return Str::containsAll($this->commits[0]['author']['username'] ?? $this->pusher, [
             '[bot]',
             'dependabot'
-            // ...
         ]);
     }
 
