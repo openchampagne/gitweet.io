@@ -26,7 +26,7 @@ class GithubRegister
             ]);
         } else {
             $user->update([
-                'name' => $data['name'],
+                'name' => $data['name'] ?? $data['login'],
                 'bio' => $data['bio'],
                 'avatar' => $data['avatar_url'],
             ]);
