@@ -18,6 +18,7 @@ class TweetNewCommit implements ShouldQueue
     public $pipeline;
     public $message;
     public $pusher;
+    public $payload;
 
     /**
      * Create a new job instance.
@@ -27,6 +28,7 @@ class TweetNewCommit implements ShouldQueue
     public function __construct(Pipeline $pipeline, array $githubPayload)
     {
         $this->pipeline = $pipeline;
+        $this->payload = $githubPayload;
         $this->message = $this->getMessage($githubPayload['head_commit']['message'] ?? '');
         $this->pusher = $githubPayload['pusher']['name'];
     }
@@ -59,12 +61,24 @@ class TweetNewCommit implements ShouldQueue
         return !empty($this->message) && $this->pipeline->twitter_access_code && !$this->isPusherABot();
     }
 
-    private function isPusherABot(): bool
+    public function isPusherABot(): bool
     {
-        return Str::containsAll($this->commits[0]['author']['username'] ?? $this->pusher, [
+        $keywords = [
             '[bot]',
             'dependabot'
-        ]);
+        ];
+
+        foreach ([
+            $this->pusher,
+            $this->payload['ref'],
+            $this->payload['commits'][0]['author']['username'] ?? ''
+        ] as $haystack) {
+            if (Str::contains($haystack, $keywords)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private function tweet(string $message, Pipeline $pipeline)

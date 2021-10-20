@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Dyrynda\Database\Support\GeneratesUuid;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pipeline extends Model
 {
-    use GeneratesUuid;
+    use GeneratesUuid, HasFactory;
 
     protected $fillable = [
         'repository',
