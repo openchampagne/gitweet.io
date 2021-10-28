@@ -30,7 +30,7 @@ class TweetNewCommit implements ShouldQueue
         $this->pipeline = $pipeline;
         $this->payload = $githubPayload;
         $this->message = $this->getMessage($githubPayload['head_commit']['message'] ?? '');
-        $this->pusher = $githubPayload['pusher']['name'];
+        $this->pusher = $githubPayload['pusher']['name'] ?? '';
     }
 
     /**
