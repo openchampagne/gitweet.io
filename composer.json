@@ -16,7 +16,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.4.1",
-        "laravel/framework": "^8.75",
+        "laravel/framework": "^8.78",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.6",
         "laravel/socialite": "^5.2",
@@ -30,7 +30,7 @@
         "fakerphp/faker": "^1.16.0",
         "mockery/mockery": "^1.4.3",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5.11"
     },
     "autoload": {
         "psr-4": {
