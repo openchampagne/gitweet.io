@@ -26,12 +26,11 @@
         "spatie/laravel-log-dumper": "^1.4"
     },
     "require-dev": {
-        "facade/ignition": "^2.5",
-        "fakerphp/faker": "^1.17.0",
-        "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.4",
+        "facade/ignition": "^2.15",
+        "fakerphp/faker": "^1.16.0",
+        "mockery/mockery": "^1.4.3",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
