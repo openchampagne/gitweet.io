@@ -29,7 +29,7 @@
         "facade/ignition": "^2.15",
         "fakerphp/faker": "^1.16.0",
         "mockery/mockery": "^1.4.3",
-        "nunomaduro/collision": "^5.10",
+        "nunomaduro/collision": "^5.11",
         "phpunit/phpunit": "^9.5.11"
     },
     "autoload": {
