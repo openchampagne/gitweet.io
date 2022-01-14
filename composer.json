@@ -19,7 +19,7 @@
         "laravel/framework": "^8.78",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.14",
-        "laravel/socialite": "^5.2",
+        "laravel/socialite": "^5.3",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.9",
         "sentry/sentry-laravel": "^2.8",
