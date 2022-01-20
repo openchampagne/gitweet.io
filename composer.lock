@@ -4980,27 +4980,27 @@
         },
         {
             "name": "spatie/laravel-log-dumper",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-log-dumper.git",
-                "reference": "3e400bf4642f45369667d29dbe8e73dd7ed5a391"
+                "reference": "0a716b63c5437cff54806f748efb1ea52fb8bbcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-log-dumper/zipball/3e400bf4642f45369667d29dbe8e73dd7ed5a391",
-                "reference": "3e400bf4642f45369667d29dbe8e73dd7ed5a391",
+                "url": "https://api.github.com/repos/spatie/laravel-log-dumper/zipball/0a716b63c5437cff54806f748efb1ea52fb8bbcb",
+                "reference": "0a716b63c5437cff54806f748efb1ea52fb8bbcb",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "^7.20|^8.0",
-                "illuminate/support": "^7.0|^8.0",
+                "illuminate/database": "^8.72|^9.0",
+                "illuminate/support": "^8.72|^9.0",
                 "php": "^7.4|^8.0"
             },
             "require-dev": {
                 "ext-json": "*",
-                "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^9.0",
+                "orchestra/testbench": "^6.23|^7.0",
+                "phpunit/phpunit": "^9.4",
                 "spatie/phpunit-snapshot-assertions": "^4.0"
             },
             "type": "library",
@@ -5039,7 +5039,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-log-dumper/issues",
-                "source": "https://github.com/spatie/laravel-log-dumper/tree/1.4.0"
+                "source": "https://github.com/spatie/laravel-log-dumper/tree/1.4.1"
             },
             "funding": [
                 {
@@ -5051,7 +5051,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-30T19:19:01+00:00"
+            "time": "2022-01-19T10:14:52+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
